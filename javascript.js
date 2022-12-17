@@ -1,4 +1,8 @@
+const buttons = document.querySelectorAll(".container>button");
 
+for(const btn of buttons) {
+    btn.addEventListener('click', playRound);
+}
 
 
 function getComputerChoice() {
@@ -6,8 +10,11 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random()*3)];
 }
 
-function playRound(cs, ps) {
+function playRound(e) {
+    console.log(e.target.textContent);
+    var cs = getComputerChoice();
     const choices = "RPS";
+    return;
     var c = choices.indexOf(cs.charAt(0).toUpperCase());
     var p = choices.indexOf(ps.charAt(0).toUpperCase());
 
@@ -23,26 +30,5 @@ function playRound(cs, ps) {
     }
 }
 
-function game() {
-    var playerScore = 0;
-    var compScore = 0;
 
-    for(var i = 0; i < 5; i++) {
-        var playerChoice = prompt("Rock, Paper or Scissors?");
-        var res = playRound(getComputerChoice(), playerChoice);
-        if(res == 1) {
-            playerScore++;
-        } else if(res == -1) {
-            compScore++;
-        }
-    }
-
-    if(playerScore > compScore) {
-        console.log(`You win ${playerScore} - ${compScore}`);
-    } else if(playerScore < compScore) {
-        console.log(`You lost ${playerScore} - ${compScore}`);
-    } else {
-        console.log(`You tied ${playerScore} - ${compScore}`);
-    }
-}
 
