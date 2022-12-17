@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    background-color: #b2b2b2;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+
+.container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 25px;
+}
+
+.container button {
+    border-radius: 10px;
+    width: 200px;
+    height: 100px;
+    font-size: large;
+}
+
+#rock {
+    background-color: #f4e1d2;
+}
+
+#paper {
+    background-color: #f18973;
+}
+
+#scissors {
+    background-color: #bc5a45;
+}
