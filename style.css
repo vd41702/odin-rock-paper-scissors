@@ -4,6 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 100px;
+    flex-direction: column;
 }
 
 .container {
@@ -15,11 +16,43 @@ body {
     padding: 25px;
 }
 
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 30px;
+    padding: 50px;
+}
+
+.selection, .scores {
+    display: flex;
+    height: 100px;
+    width: 200px;
+
+}
+
+.scores {
+    justify-content: space-between;
+}
+
+.selection {
+    justify-content: center;
+}
+
 .container button {
     border-radius: 10px;
     width: 200px;
     height: 100px;
     font-size: large;
+}
+
+#playerScore, #computerScore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    
 }
 
 #rock {
