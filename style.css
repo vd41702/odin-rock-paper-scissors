@@ -64,12 +64,25 @@ h1 {
     width: 10px;
 }
 
+/*
 #rock {
     background-color: #f4e1d2;
 }
 
 #paper {
     background-color: #f18973;
+}
+
+#scissors {
+    background-color: #bc5a45;
+}
+*/
+#rock {
+    background-color: #e8aa5f;
+}
+
+#paper {
+    background-color: white;
 }
 
 #scissors {
