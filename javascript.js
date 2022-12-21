@@ -5,6 +5,7 @@ const compChoiceH4 = document.createElement('h4');
 const playerScoreDisplay = document.querySelector('#playerScore > p');
 const compScoreDisplay = document.querySelector('#computerScore > p');
 
+compChoiceH4.innerText = "-";
 compChoiceDiv.appendChild(compChoiceH4);
 
 for(const btn of buttons) {
@@ -20,7 +21,6 @@ function getComputerChoice() {
 }
 
 function calcRound(ps, cs) {
-    
     const choices = "RPS";
     var c = choices.indexOf(cs.charAt(0).toUpperCase());
     var p = choices.indexOf(ps.charAt(0).toUpperCase());
@@ -42,8 +42,12 @@ function playRound(e) {
     //check who won, and update scores
     if(res == -1) {
         computerScore++;
-    } else {
+        cs += ", you lost the round"
+    } else if(res == 1) {
         playerScore += res;
+        cs += ", you won the round"
+    } else {
+        cs += ", it's a tie"
     }
 
     //display scores
@@ -51,17 +55,30 @@ function playRound(e) {
     compScoreDisplay.innerText = computerScore;
 
     //display computer selection
+    
     compChoiceH4.innerText = cs;
-
+    
     //check if someone won
     if(computerScore == 5) {
-        alert("You lost :(");
+        alert("You lost :( click ok to play again");
+        reset();
     } else if(playerScore == 5) {
-        alert("You won!!");
+        alert("You won!! click ok to play again");
+        reset();
     }
-    
-    
 }
+
+function reset() {
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreDisplay.innerText = playerScore;
+    compScoreDisplay.innerText = computerScore;
+    compChoiceH4.innerText = "-";
+}
+
+
+
+
 
 
 
