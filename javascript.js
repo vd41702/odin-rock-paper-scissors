@@ -76,9 +76,3 @@ function reset() {
     compChoiceH4.innerText = "-";
 }
 
-
-
-
-
-
-
