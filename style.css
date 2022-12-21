@@ -88,3 +88,7 @@ h1 {
 #scissors {
     background-color: #bc5a45;
 }
+
+.container button:hover {
+    border-color: white;
+}
